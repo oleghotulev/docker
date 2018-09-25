@@ -9,5 +9,5 @@ RUN cd /root/nginx/nginx-1.15.3 && ./configure
 RUN cd /root/nginx/nginx-1.15.3 && ./configure --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --with-pcre --pid-path=/var/run/nginx.pid --with-http_ssl_module --with-http_v2_module && make && make install
 RUN touch /var/run/nginx.pid
 COPY keep_container.sh /root/keep_container.sh
-EXPOSE 80/tcp
+EXPOSE 443/tcp
 CMD ["/bin/bash", "-c", "/root/keep_container.sh"]
